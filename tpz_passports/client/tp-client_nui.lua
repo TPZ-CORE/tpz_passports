@@ -16,6 +16,12 @@ ToggleUI = function(display)
     SendNUIMessage({ type = "enable", enable = display })
 end
 
+local function toProperCase(str)
+    return str:lower():gsub("(%a)(%w*)", function(first, rest)
+        return first:upper() .. rest
+    end)
+end
+
 -----------------------------------------------------------
 --[[ Functions ]]--
 -----------------------------------------------------------
@@ -39,6 +45,9 @@ AddEventHandler("tpz_passports:client:onPassportItemUse", function(data)
     end
 
     PlayerData.HasNUIActive = true
+
+    PassportData.firstname = toProperCase(PassportData.firstname)
+    PassportData.lastname  = toProperCase(PassportData.lastname)
 
     SendNUIMessage({ 
         action = 'updateInformation',
