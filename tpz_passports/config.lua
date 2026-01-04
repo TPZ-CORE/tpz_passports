@@ -124,23 +124,21 @@ Config.Locations = {
 --[[ Webhooks ]]--
 ---------------------------------------------------------------
 
+-- (!) Checkout tpz_core/server/discord/webhooks.lua to modify the webhook urls.
 Config.Webhooks = {
 
     ['CREATED_PASSPORT'] = { -- When a passport has been created.
         Enabled = false, 
-        Url = "", 
         Color = 10038562,
     },
 
     ['RETRIEVED_PASSPORT'] = { -- When a passport has been retrieved.
         Enabled = false, 
-        Url = "", 
         Color = 10038562,
     },
 
     ['RENEWED_PASSPORT'] = { -- When a passport has been renewed.
         Enabled = false, 
-        Url = "", 
         Color = 10038562,
     },
 }
