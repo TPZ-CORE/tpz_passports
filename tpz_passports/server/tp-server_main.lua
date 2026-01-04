@@ -134,8 +134,8 @@ AddEventHandler("tpz_passports:server:retrieve", function()
 			if Config.Webhooks['RETRIEVED_PASSPORT'].Enabled then
 				local title   = string.format("📄`Passport Retrieval`", id)
 				local message = string.format("The player with the Steam Name: `%s` and Identifier: `%s` (Character Identifier: `%s`) has retrieved a passport.\n\n**Passport ID**: `%s`.", steamName, identifier, charIdentifier, res.identityId)
-				
-				TPZ.SendToDiscord(Config.Webhooks['RETRIEVED_PASSPORT'].Url, title, message, Config.Webhooks['RETRIEVED_PASSPORT'].Color)
+			    local url = TPZ.GetWebhookUrl('tpz_passports', 'RETRIEVED_PASSPORT')
+				TPZ.SendToDiscord(url, title, message, Config.Webhooks['RETRIEVED_PASSPORT'].Color)
 			end
 
 		end
@@ -196,12 +196,13 @@ AddEventHandler("tpz_passports:server:renew", function()
 			if Config.Webhooks['RENEWED_PASSPORT'].Enabled then
 				local title   = string.format("📄`Passport Renewal`", id)
 				local message = string.format("The player with the Steam Name: `%s` and Identifier: `%s` (Character Identifier: `%s`) has renewed a passport.\n\n**Passport ID**: `%s`.", steamName, identifier, charIdentifier, res.identityId)
-				
-				TPZ.SendToDiscord(Config.Webhooks['RENEWED_PASSPORT'].Url, title, message, Config.Webhooks['RENEWED_PASSPORT'].Color)
+				local url     = TPZ.GetWebhookUrl('tpz_passports', 'RENEWED_PASSPORT')
+				TPZ.SendToDiscord(url, title, message, Config.Webhooks['RENEWED_PASSPORT'].Color)
 			end
 			
 		end
 
 	end)
+
 
 end)
