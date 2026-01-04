@@ -90,8 +90,8 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 	if Config.Webhooks['CREATED_PASSPORT'].Enabled then
 		local title   = string.format("📄`New Passport Registration`", id)
 		local message = string.format("The player with the Steam Name: `%s` and Identifier: `%s` (Character Identifier: `%s`) has registered a new passport.\n\n**Passport ID**: `%s`.\n\n**Image Url**:\n`%s`.", steamName, identifier, charIdentifier, identityId, avatar_url)
-		
-		TPZ.SendImageUrlToDiscord(Config.Webhooks['CREATED_PASSPORT'].Url, title, message, avatar_url, Config.Webhooks['CREATED_PASSPORT'].Color)
+		local url     = TPZ.GetWebhookUrl("tpz_passports", "CREATED_PASSPORT")
+		TPZ.SendImageUrlToDiscord(url, title, message, avatar_url, Config.Webhooks['CREATED_PASSPORT'].Color)
 	end
 
 end)
@@ -206,3 +206,4 @@ AddEventHandler("tpz_passports:server:renew", function()
 
 
 end)
+
