@@ -33,7 +33,7 @@ Config.DisplayPassportCardDistance = 2.0
 Config.AutomaticallyClosePassportDelayDuration = 20 -- Time in seconds.
 
 -- (!) tpz_society IS REQUIRED IF YOU WANT THE REGISTRATION OR RETRIEVE COST MONEY TO BE ADDED ON A SOCIETY LEDGER ACCOUNT.
-Config.Society = { Enabled = true, Job = 'police' }
+Config.Society = { Enabled = false, Job = 'police' }
 
 -----------------------------------------------------------
 --[[ Passport Registration Locations  ]]--
