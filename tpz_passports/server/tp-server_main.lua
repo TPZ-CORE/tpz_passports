@@ -43,7 +43,13 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 	end
 
 	if isRegistered then
-		SendNotification(_source, Locales['ALREADY_REGISTERED'], "error")
+
+		if targetId then
+			SendNotification(_source, Locales['ALREADY_REGISTERED_TARGET'], "error")
+		else
+			SendNotification(_source, Locales['ALREADY_REGISTERED'], "error")
+		end
+
 		return
 	end
 
