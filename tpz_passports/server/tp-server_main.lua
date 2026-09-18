@@ -13,7 +13,7 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 	local _source      = source
 	local targetSource = _source
 
-	if targetId then -- fix.
+	if targetId then -- fix 1.0.1 target was never added if was true. 
 		targetSource = tonumber(targetId)
 	end
 
