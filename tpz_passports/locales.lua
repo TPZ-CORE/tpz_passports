@@ -5,6 +5,7 @@ Locales = {
 
   ['PROMPT_PASSPORT_REGISTRATION_OFFICE'] = 'Identity Registrations Office Department',
   ['ALREADY_REGISTERED']                  = "~e~You have already registered on our department.",
+  ['ALREADY_REGISTERED_TARGET']           = "~e~This person is already registered on our department.", -- 1.0.1
   ['NOT_REGISTERED']                      = "~e~You don't have registered on our department.",
 
   ['INPUT_REGISTER_TITLE']                = "Registrations Office Department",
