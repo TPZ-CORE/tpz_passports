@@ -24,6 +24,7 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 		return
 	end
 
+ -- 1.0.1
 	local charIdentifier = xPlayer.getCharacterIdentifier()
 	local finished, isRegistered = false, false
 
@@ -42,6 +43,7 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 	end
 
 	if isRegistered then
+		SendNotification(_source, Locales['ALREADY_REGISTERED'], "error")
 		return
 	end
 
