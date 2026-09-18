@@ -11,10 +11,10 @@ local TPZ = exports.tpz_core:getCoreAPI()
 RegisterServerEvent("tpz_passports:server:register")
 AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 	local _source      = source
-	local targetSource = 0
+	local targetSource = _source
 
-	if targetId == nil then -- if target source is null, the target is source.
-		targetSource = _source
+	if targetId then -- fix.
+		targetSource = tonumber(targetId)
 	end
 
 	targetSource = tonumber(targetSource)
