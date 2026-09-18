@@ -24,6 +24,28 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 		return
 	end
 
+	local charIdentifier = xPlayer.getCharacterIdentifier()
+	local finished, isRegistered = false, false
+
+	exports["ghmattimysql"]:execute("SELECT * FROM `passports` WHERE `charidentifier` = @charidentifier", { ['charidentifier'] = charIdentifier }, function(result)
+		
+		if result and result[1] then
+			isRegistered = true
+		end
+
+		finished = true
+
+	end)
+
+	while not finished do
+		Wait(500)
+	end
+
+	if isRegistered then
+		return
+	end
+
+
 	local account = xPlayer.getAccount(0)
 
 	if account < Config.PassportCosts.Registration then
