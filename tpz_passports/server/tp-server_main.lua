@@ -17,8 +17,6 @@ AddEventHandler("tpz_passports:server:register", function(targetId, avatar_url)
 		targetSource = tonumber(targetId)
 	end
 
-	targetSource = tonumber(targetSource)
-
 	local xPlayer = TPZ.GetPlayer(targetSource)
 
 	if GetPlayerName(targetSource) == nil or not xPlayer.loaded() then -- invalid target player (not online or in session)
