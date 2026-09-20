@@ -234,7 +234,7 @@ if Config.EnableRegistrationLocations then
                                                 TriggerEvent("tpz_inputs:getTextInput", inputData, function(cb)
                                                 
                                                 
-                                                    if cb and cb:match('^%s*$') then
+                                                    if cb and not cb:match('^%s*$') then
 
                                                         TriggerServerEvent("tpz_passports:server:register", nil, cb)
                                                     else
